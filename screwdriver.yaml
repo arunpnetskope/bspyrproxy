@@ -10,4 +10,4 @@ jobs:
         steps:
             - setup-package: apt-get update -y
             - install: apt-get install apache2 -y
-            - test: systemctl start apache2
+            - start-server: apache2ctl -D foreground
