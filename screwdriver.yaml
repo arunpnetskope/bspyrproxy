@@ -1,0 +1,13 @@
+shared:
+    image: ubuntu:latest
+
+jobs:
+    main:
+        requires:
+            - ~pr
+            - ~commit
+            - ~sd@73:publish #artifact-bookend https://cd.screwdriver.cd/pipelines/73
+        steps:
+            - setup-package: apt-get update -y
+            - install: apt-get install apache2 -y
+            - test: systemctl start apache2
