@@ -7,7 +7,7 @@ jobs:
             - ~pr
             - ~commit
         steps: 
-            - copy ssh-key: add id_bstest ~/.ssh/ 
-            - copy pub-key: add id_bstest.pub ~/.ssh/ 
-            - setup connection: ssh ansible@apiconnectorfmaggcmr01.betaskope.local
-            - test connectivity: touch /tmp/SD-success
+            - copy-ssh-key: add id_bstest ~/.ssh/ 
+            - copy-pub-key: add id_bstest.pub ~/.ssh/ 
+            - setup-connection: ssh ansible@apiconnectorfmaggcmr01.betaskope.local
+            - test-connectivity: touch /tmp/SD-success
