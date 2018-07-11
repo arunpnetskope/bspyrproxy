@@ -1,13 +1,13 @@
 shared:
-    image: ubuntu:latest
+    image: bsdeployready:latest
 
 jobs:
     main:
         requires:
             - ~pr
             - ~commit
-            - ~sd@73:publish #artifact-bookend https://cd.screwdriver.cd/pipelines/73
-        steps:
-            - setup-package: apt-get update -y
-            - install: apt-get install apache2 -y
-            - start-server: apache2ctl -D foreground
+        steps: 
+            - copy ssh-key: add id_bstest ~/.ssh/ 
+            - copy pub-key: add id_bstest.pub ~/.ssh/ 
+            - setup connection: ssh ansible@apiconnectorfmaggcmr01.betaskope.local
+            - test connectivity: touch /tmp/SD-success
