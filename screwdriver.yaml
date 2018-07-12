@@ -1,5 +1,5 @@
 shared:
-    image: bsdeployready:stable
+    image: arunpdevops/bstest:latest
 
 jobs:
     main:
