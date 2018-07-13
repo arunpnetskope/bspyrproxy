@@ -1,15 +1,5 @@
 shared:
-    image: betaskopesd:stable
-    settings: 
-       email:
-          addresses: [arun.p@netskope.com]
-          statuses: 
-               - SUCCESS
-               - FAILURE
-               - ABORTED
-               - QUEUED
-               - RUNNING
-
+    image: arunpdevops/preprod
 
 jobs:
     main:
@@ -18,4 +8,4 @@ jobs:
             - ~commit
         steps: 
             - test-connectivity: touch /tmp/SD-success
-            - execute a job:  su - ansible -C "/infrastructure/automation/scripts/ansible-apt.sh -h pyrproxy -i /opt/ns/automation-53.1.0/automation/inventory/betaskope.local -r 53.1.0"
+            - execute-job: cat vaultpass | sudo -S su - ansible -c "/opt/ns/automation-53.1.0/automation/scripts/ansible-apt.sh -h pyrproxy -i /opt/ns/automation-53.1.0/automation/inventory/betaskope.local -r 53.1.0"
