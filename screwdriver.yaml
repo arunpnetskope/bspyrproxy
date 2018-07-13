@@ -1,5 +1,5 @@
 shared:
-    image: betaskopesb:stable
+    image: betaskopesd:stable
     settings: 
        email:
           addresses: [arun.p@netskope.com]
