@@ -3,6 +3,6 @@ shared:
 jobs:
     main:
         requires: [~pr, ~commit]
-        sourcePaths: ["template/", "screwdriver.yaml"]
+        sourcePaths: ["template/screwdriver.yaml"]
         steps:
            - echo "hello netskope!"        
