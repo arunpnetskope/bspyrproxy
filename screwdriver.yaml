@@ -1,5 +1,6 @@
 jobs:
     main:
         requires: [~pr, ~commit]
-        sourcePaths: ["template/screwdriver.yaml"]
+        environment:
+          SD_SOURCE_DIR: template
 
