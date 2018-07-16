@@ -1,9 +1,5 @@
-shared:
-
 jobs:
-    requires:
-    environment:
-      SD_TEMPLATE_PATH: ./template/screwdriver.yaml
-    steps:
-      - execute-job: ./template/screwdriver.yaml
+    main:
+        requires: [~pr, ~commit]
+        sourcePaths: ["template/screwdriver.yaml"]
 

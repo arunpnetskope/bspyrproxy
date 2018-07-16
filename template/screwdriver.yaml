@@ -1,0 +1,21 @@
+shared:
+    image: localhost:5000/preprod
+    settings:
+         email: [arun.p@netkope.com] 
+         channels: 
+            - netskope.slack.com/arun.p           
+         statuses:
+            - SUCCESS
+            - FAILURE
+            - ABORTED
+            - QUEUED
+            - RUNNING
+
+jobs:
+    main:
+        requires:
+            - ~pr
+            - ~commit
+        steps: 
+            - test-connectivity: touch /tmp/SD-success
+            - execute-job: cat /infrastructure/vaultpass | sudo -S su - ansible -c "/opt/ns/automation-53.1.0/automation/scripts/ansible-apt.sh -h pyrproxy -i /opt/ns/automation-53.1.0/automation/inventory/betaskope.local -r 53.1.0"
