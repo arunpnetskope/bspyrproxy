@@ -1,5 +1,5 @@
 shared:
-    image: arunpdevops/preprod
+    image: localhost:5000/preprod
     settings:
          email: [arun.p@netkope.com] 
          channels: 
