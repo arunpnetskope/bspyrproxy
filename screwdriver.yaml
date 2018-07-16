@@ -3,7 +3,6 @@ shared:
 jobs:
     main:
         requires: [~pr, ~commit]
-        environment:
-           SD_SOURCE_DIR: template
+        sourcePaths: ["template/", "screwdriver.yaml"]
         steps:
            - echo "hello netskope!"        
