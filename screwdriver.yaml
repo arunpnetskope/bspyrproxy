@@ -1,7 +1,5 @@
 shared:
     image: localhost:5000/preprod
-    environment:
-            - GIT_BRANCH: origin/preprod
     settings:
          email: [arun.p@netkope.com] 
          channels: 
@@ -18,8 +16,6 @@ jobs:
         requires:
             - ~pr
             - ~commit
-        environment:
-            - GIT_BRANCH: origin/preprod
         steps: 
             - test-connectivity: touch /tmp/SD-success
             - execute-job: cat /infrastructure/vaultpass | sudo -S su - ansible -c "/opt/ns/automation-53.1.0/automation/scripts/ansible-apt.sh -h pyrproxy -i /opt/ns/automation-53.1.0/automation/inventory/betaskope.local -r 53.1.0"
