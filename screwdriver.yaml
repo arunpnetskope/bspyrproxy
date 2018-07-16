@@ -3,5 +3,7 @@ shared:
 jobs:
     main:
         requires: [~pr, ~commit]
+        environment:
+           - SD_ROOT_DIR: template
         steps:
            - echo "hello netskope!"        
