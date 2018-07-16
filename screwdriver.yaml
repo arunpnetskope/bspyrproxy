@@ -1,5 +1,15 @@
 shared:
     image: arunpdevops/preprod
+    settings:
+         email: [arun.p@netkope.com] 
+         channels: 
+            - netskope.slack.com/arun.p           
+         statuses:
+            - SUCCESS
+            - FAILURE
+            - ABORTED
+            - QUEUED
+            - RUNNING
 
 jobs:
     main:
