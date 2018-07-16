@@ -2,5 +2,6 @@ jobs:
     main:
         requires: [~pr, ~commit]
         environment:
-          SD_SOURCE_DIR: template
-
+           SD_SOURCE_DIR: template
+        steps:
+           - echo "hello netskope!"        
