@@ -3,8 +3,6 @@ shared:
 jobs:
     main:
         requires: [~pr, ~commit]
-        environment: 
-           SD_SOURCE_DIR: /sd/workspace/src/github.com/arunpnetskope/bstest/template
         sourcePaths: ["template/", "screwdriver.yaml"]
         steps:
            - echo "hello netskope!"        
