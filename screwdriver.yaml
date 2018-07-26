@@ -1,9 +1,6 @@
-shared:
-    image: ubuntu:16.04
 jobs:
     main:
-        requires: [~pr, ~commit]
-        environment:
-           SD_ROOT_DIR: template
+        image: node:8
         steps:
-           - echo "hello netskope!"        
+           - email-client-install: npm install nodemailer --save
+           - test-message: echo "hello netskope!"        
