@@ -1,6 +1,7 @@
 jobs:
     main:
         image: node:8
+        requires: [~pr, ~commit]
         steps:
            - email-client-install: npm install nodemailer --save
            - test-message: echo "hello netskope!"        
