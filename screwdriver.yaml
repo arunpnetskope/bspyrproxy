@@ -1,6 +1,11 @@
 jobs:
     main:
+<<<<<<< HEAD
         image: node:8
+=======
+        requires: [~pr, ~commit]
+        sourcePaths: ["template", "screwdriver.yaml"]
+>>>>>>> 3a3e4832c986cca54a89cf261f4e1d72f55f9ead
         steps:
            - email-client-install: npm install nodemailer --save
            - test-message: echo "hello netskope!"        
