@@ -1,0 +1,20 @@
+shared:
+    environment:
+       RELEASE: test
+    settings:
+       slack: 
+          channels:
+             - strictly_deployment
+          statuses: 
+             - SUCCESS
+             - FAILURE
+             - ABORTED
+             - QUEUED
+             - RUNNING
+
+jobs:
+      main:
+          requires: [~pr, ~commit]
+          image: node:6
+          steps: 
+             - print-version: echo $RELEASE
