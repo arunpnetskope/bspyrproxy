@@ -15,6 +15,6 @@ shared:
 jobs:
       main:
           requires: [~pr, ~commit]
-          image: node:6
+          image: node:8
           steps: 
              - print-version: echo $RELEASE
