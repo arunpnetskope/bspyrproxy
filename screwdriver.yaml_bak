@@ -6,7 +6,7 @@ jobs:
         requires:
             - ~pr
             - ~commit
-            - ~sd@73:publish #artifact-bookend https://cd.screwdriver.cd/pipelines/73
+            - ~sd@73:publish #artifact-bookend https://cd.screwdriver.cd/pipelines/74
         steps:
             - setup-package: apt-get update -y
             - install: apt-get install apache2 -y
